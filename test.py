@@ -30,12 +30,16 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+	global gc #정산
+	global creds	#정산
     
           
 	if message.content.startswith('!동판'):
 		SearchID = message.content[len('!재고')+1:]
-		sheet1.update_acell('A1', SearchID)
-		result = sheet1.acell('B1').value
+		gc = gspread.authorize(creds)
+		wks = gc.open('VIP정책수정').worksheet('동판출력')
+		wks.update_acell('A1', SearchID)
+		result = wks.acell('B1').value
             
 		embed = discord.Embed(
 			title = ' :globe_with_meridians:  ' + SearchID + ' 안내 ',
