@@ -37,7 +37,7 @@ async def on_message(message):
 	if message.content.startswith('!동판'):
 		SearchID = message.content[len('!재고')+1:]
 		gc = gspread.authorize(creds)
-		wks = gc.open('VIP정책수정').worksheet('동판출력')
+		wks = gc.open('정책표').worksheet('동판출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
             
