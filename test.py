@@ -35,7 +35,7 @@ async def on_message(message):
     
           
 	if message.content.startswith('!동판'):
-		SearchID = message.content[len('!재고')+1:]
+		SearchID = message.content[len('!동판')+1:]
 		gc = gspread.authorize(creds)
 		wks = gc.open('정책표').worksheet('동판출력')
 		wks.update_acell('A1', SearchID)
@@ -43,10 +43,27 @@ async def on_message(message):
             
 		embed = discord.Embed(
 			title = ' :globe_with_meridians:  ' + SearchID + ' 안내 ',
-			description= '```' + SearchID + '  이번달 정책입니다. ' + result + ' ```',
+			description= '```' + SearchID + '  오늘 정책입니다. ' + result + ' ```',
 			color=0x00ffff
 			)
 		await client.send_message(message.channel, embed=embed)
+		
+		
+		
+	if message.content.startswith('!공짜폰'):
+		SearchID = message.content[len('!공짜폰')+1:]
+		gc = gspread.authorize(creds)
+		wks = gc.open('정책표').worksheet('무선공짜출력')
+		wks.update_acell('A1', SearchID)
+		result = wks.acell('B1').value
+		
+		embed = discord.Embed(
+			title = ' 오늘의  ' + SearchID + ' 공짜폰 안내 ',
+			description= '```' + SearchID + '  정책입니다. ' + result + ' ```',
+			color=0x4BAF4B
+			)
+		await client.send_message(message.channel, embed=embed)
+		
             
 
 access_token = os.environ["BOT_TOKEN"]
