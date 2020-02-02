@@ -64,6 +64,23 @@ async def on_message(message):
 			)
 		await client.send_message(message.channel, embed=embed)
 		
+		
+		
+		
+	if message.content.startswith('!외국인공짜폰'):
+		SearchID = message.content[len('!외국인공짜폰')+1:]
+		gc = gspread.authorize(creds)
+		wks = gc.open('정책표').worksheet('외국인공짜출력')
+		wks.update_acell('A1', SearchID)
+		result = wks.acell('B1').value
+		
+		embed = discord.Embed(
+			title = ' 오늘의  ' + SearchID + ' 외국인공짜폰 안내 ',
+			description= '```' + SearchID + '  정책입니다. ' + result + ' ```',
+			color=0xFF848F
+			)
+		await client.send_message(message.channel, embed=embed)
+		
             
 
 access_token = os.environ["BOT_TOKEN"]
