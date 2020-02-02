@@ -11,7 +11,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('dongpan-699a93059b16.j
 client = gspread.authorize(creds)
 doc = client.open_by_url('https://docs.google.com/spreadsheets/d/1hL4uvq2On11zp-_JWoWMG0Gyyuty5Lhvp_gQkfTYsOI')
 
-sheet1 = doc.worksheet('동판출력')
+
 
 
 client = discord.Client()
