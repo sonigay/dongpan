@@ -68,7 +68,7 @@ async def on_message(message):
 			color=0x4BAF4B
 			)
 		embed2 = discord.Embed(
-			title = + SearchID + ' 공짜폰 조회!! ',
+			title = SearchID + ' 공짜폰 조회!! ',
 			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
 			color=0x4BAF4B
 			)
@@ -91,7 +91,7 @@ async def on_message(message):
 			color=0xFF848F
 			)
 		embed2 = discord.Embed(
-			title = + SearchID + ' 외국인공짜폰 조회!! ',
+			title = SearchID + ' 외국인공짜폰 조회!! ',
 			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
 			color=0xFF848F
 			)
