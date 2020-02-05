@@ -41,12 +41,18 @@ async def on_message(message):
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
             
-		embed = discord.Embed(
+		embed1 = discord.Embed(
 			title = ' :globe_with_meridians:  ' + SearchID + ' 안내 ',
 			description= '```' + SearchID + '  오늘 정책입니다. ' + result + ' ```',
 			color=0x00ffff
 			)
-		await client.send_message(message.channel, embed=embed)
+		embed2 = discord.Embed(
+			title = ' :globe_with_meridians: 동판정책조회!! ',
+			description= '```' "출력자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
+			color=0x00ffff
+			)
+		await client.send_message(client.get_channel("674653007132229632"), embed=embed2)
+		await client.send_message(message.channel, embed=embed1)
 		
 		
 		
@@ -57,12 +63,18 @@ async def on_message(message):
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		
-		embed = discord.Embed(
+		embed1 = discord.Embed(
 			title = ' 오늘의  ' + SearchID + ' 공짜폰 안내 ',
 			description= '```' + SearchID + '  정책입니다. ' + result + ' ```',
 			color=0x4BAF4B
 			)
-		await client.send_message(message.channel, embed=embed)
+		embed2 = discord.Embed(
+			title = ' 공짜폰 조회!! ',
+			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
+			color=0x4BAF4B
+			)
+		await client.send_message(client.get_channel("674652501693300737"), embed=embed2)
+		await client.send_message(message.channel, embed=embed1)
 		
 		
 		
@@ -74,12 +86,18 @@ async def on_message(message):
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		
-		embed = discord.Embed(
+		embed1 = discord.Embed(
 			title = ' 오늘의  ' + SearchID + ' 외국인공짜폰 안내 ',
 			description= '```' + SearchID + '  정책입니다. ' + result + ' ```',
 			color=0xFF848F
 			)
-		await client.send_message(message.channel, embed=embed)
+		embed2 = discord.Embed(
+			title = ' 외국인공짜폰 조회!! ',
+			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
+			color=0xFF848F
+			)
+		await client.send_message(client.get_channel("674654114592063498"), embed=embed2)
+		await client.send_message(message.channel, embed=embed1)
 		
             
 
