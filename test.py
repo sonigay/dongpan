@@ -40,14 +40,13 @@ async def on_message(message):
 		wks = gc.open('정책표').worksheet('동판출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
-            
 		embed1 = discord.Embed(
 			title = ' :globe_with_meridians:  ' + SearchID + ' 안내 ',
 			description= '```' + SearchID + '  오늘 정책입니다. ' + result + ' ```',
 			color=0x00ffff
 			)
 		embed2 = discord.Embed(
-			title = ' :globe_with_meridians: 동판정책조회!! ',
+			title = ' :globe_with_meridians: 동판' + SearchID + ' 정책조회!! ',
 			description= '```' "출력자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
 			color=0x00ffff
 			)
@@ -69,7 +68,7 @@ async def on_message(message):
 			color=0x4BAF4B
 			)
 		embed2 = discord.Embed(
-			title = ' 공짜폰 조회!! ',
+			title = + SearchID + ' 공짜폰 조회!! ',
 			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
 			color=0x4BAF4B
 			)
@@ -92,7 +91,7 @@ async def on_message(message):
 			color=0xFF848F
 			)
 		embed2 = discord.Embed(
-			title = ' 외국인공짜폰 조회!! ',
+			title = + SearchID + ' 외국인공짜폰 조회!! ',
 			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
 			color=0xFF848F
 			)
