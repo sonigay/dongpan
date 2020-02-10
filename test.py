@@ -37,7 +37,7 @@ async def on_message(message):
 	if message.content.startswith('!동판'):
 		SearchID = message.content[len('!동판')+1:]
 		gc = gspread.authorize(creds)
-		wks = gc.open('정책표').worksheet('동판출력')
+		wks = gc.open('정책표수정').worksheet('동판출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		embed1 = discord.Embed(
@@ -58,7 +58,7 @@ async def on_message(message):
 	if message.content.startswith('!공짜폰'):
 		SearchID = message.content[len('!공짜폰')+1:]
 		gc = gspread.authorize(creds)
-		wks = gc.open('정책표').worksheet('무선공짜출력')
+		wks = gc.open('정책표수정').worksheet('무선공짜출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		
@@ -81,7 +81,7 @@ async def on_message(message):
 	if message.content.startswith('!외국인공짜폰'):
 		SearchID = message.content[len('!외국인공짜폰')+1:]
 		gc = gspread.authorize(creds)
-		wks = gc.open('정책표').worksheet('외국인공짜출력')
+		wks = gc.open('정책표수정').worksheet('외국인공짜출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		
