@@ -42,7 +42,7 @@ async def on_message(message):
 		result = wks.acell('B1').value
 		embed1 = discord.Embed(
 			title = ' :globe_with_meridians:  ' + SearchID + ' 안내 ',
-			description= '```' + SearchID + '  오늘 정책입니다. ' + result + ' ```',
+			description= '**```css\n' + SearchID + '  오늘 정책입니다. ' + result + ' ```**',
 			color=0x00ffff
 			)
 		embed2 = discord.Embed(
@@ -87,7 +87,7 @@ async def on_message(message):
 		
 		embed1 = discord.Embed(
 			title = ' 오늘의 ' + SearchID + ' 외국인공짜폰 안내 ',
-			description= '```' + SearchID + '  정책입니다. ' + result + ' ```',
+			description= '**```css\n' + SearchID + '  정책입니다. ' + result + ' ```**',
 			color=0xFF848F
 			)
 		embed2 = discord.Embed(
