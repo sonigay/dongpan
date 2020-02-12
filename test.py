@@ -64,12 +64,12 @@ async def on_message(message):
 		
 		embed1 = discord.Embed(
 			title = ' 오늘의 ' + SearchID + ' 공짜폰 안내 ',
-			description= '```' + SearchID + '  정책입니다. ' + result + ' ```',
+			description= '**```css\n' + SearchID + '  정책입니다. ' + result + ' ```**',
 			color=0x4BAF4B
 			)
 		embed2 = discord.Embed(
 			title = SearchID + ' 공짜폰 조회!! ',
-			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
+			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + '```',
 			color=0x4BAF4B
 			)
 		await client.send_message(client.get_channel("674652501693300737"), embed=embed2)
