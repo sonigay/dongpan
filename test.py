@@ -122,7 +122,7 @@ async def on_message(message):
 			value= '```diff\n-위 엔드정책은 참고용입니다. \n-정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n-맞추셔야하십니다.감사합니다.\n-폰클단가표 보는법은 앞자리 2빼고 뒷두자리 입니다.\n-그레이드확인은 "!그레이드" 로 확인 가능하십니다..```'
 			)
 		embed2 = discord.Embed(
-			title = ":bar_chart: 정책표출력!!",
+			title = ':bar_chart: 적용일시: ' + result + ' 출력!',
 			description= '```' "출력자:" + message.author.display_name +"\n거래처:" + message.channel.name + '```',
 			color=0xf29886
 			)
