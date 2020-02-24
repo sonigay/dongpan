@@ -512,7 +512,7 @@ async def on_message(message):
 		for i in range(sec, 0, -1):
 			print(i)
 			await client.send_message(message.channel, embed=discord.Embed(description='타이머 작동중 : '+str(i)+'초'))
-			time.sleep(1)
+			sleep(1)
 
 		else:
 			print("땡")
