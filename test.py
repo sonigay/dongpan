@@ -14,8 +14,8 @@ creds1 = ServiceAccountCredentials.from_json_keyfile_name('dongpan-699a93059b16.
 creds2 = ServiceAccountCredentials.from_json_keyfile_name('jumun-8151173be58f.json', scope2)
 client1 = gspread.authorize(creds1)
 client2 = gspread.authorize(creds2)
-doc1 = client.open_by_url('https://docs.google.com/spreadsheets/d/1hL4uvq2On11zp-_JWoWMG0Gyyuty5Lhvp_gQkfTYsOI')
-doc2 = client.open_by_url('https://docs.google.com/spreadsheets/d/15p6G4jXmHw7Z_iRCYeFwRzkzLxqf-3Pj0c6FeVuFYBM')
+doc1 = client1.open_by_url('https://docs.google.com/spreadsheets/d/1hL4uvq2On11zp-_JWoWMG0Gyyuty5Lhvp_gQkfTYsOI')
+doc2 = client2.open_by_url('https://docs.google.com/spreadsheets/d/15p6G4jXmHw7Z_iRCYeFwRzkzLxqf-3Pj0c6FeVuFYBM')
 
 
 
