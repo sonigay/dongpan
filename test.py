@@ -140,8 +140,8 @@ async def on_message(message):
 		await client.send_message(message.channel, embed=embed1)
 		
 	if message.content.startswith('!그레이드'):
-		gc = gspread.authorize(creds)
-		wks = gc.open('오전재고').worksheet('그레이드')
+		gc2 = gspread.authorize(creds2)
+		wks = gc2.open('오전재고').worksheet('그레이드')
 		result = wks.acell('B1').value
 		embed1 = discord.Embed(
 			title = ' 파트너 그레이드 안내!! ',
