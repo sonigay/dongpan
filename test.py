@@ -3,13 +3,19 @@ import asyncio
 import random
 import os
 import datetime
+from time import sleep
+import arrow
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('dongpan-699a93059b16.json', scope)
-client = gspread.authorize(creds)
-doc = client.open_by_url('https://docs.google.com/spreadsheets/d/1hL4uvq2On11zp-_JWoWMG0Gyyuty5Lhvp_gQkfTYsOI')
+scope1 = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+scope2 = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+creds1 = ServiceAccountCredentials.from_json_keyfile_name('dongpan-699a93059b16.json', scope1)
+creds2 = ServiceAccountCredentials.from_json_keyfile_name('jumun-8151173be58f.json', scope2)
+client1 = gspread.authorize(creds1)
+client2 = gspread.authorize(creds2)
+doc1 = client.open_by_url('https://docs.google.com/spreadsheets/d/1hL4uvq2On11zp-_JWoWMG0Gyyuty5Lhvp_gQkfTYsOI')
+doc2 = client.open_by_url('https://docs.google.com/spreadsheets/d/15p6G4jXmHw7Z_iRCYeFwRzkzLxqf-3Pj0c6FeVuFYBM')
 
 
 
@@ -25,19 +31,22 @@ async def on_ready():
 	print("----------------")
 	await client.change_presence(game=discord.Game(name='정책 전달', type=1))
 
-
+@client.event
+async def on_member_join(member):
+    sleep(1)	
+    fmt = '{1.name} 에 오신것을 환영합니다.\n{0.mention} 님!! \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다. '
+    channel = member.server.get_channel("661832869521391646")
+    return await client.send_message(channel, fmt.format(member, member.server))
 
 
 @client.event
 async def on_message(message):
-	global gc #정산
-	global creds	#정산
     
           
 	if message.content.startswith('!동판'):
 		SearchID = message.content[len('!동판')+1:]
-		gc = gspread.authorize(creds)
-		wks = gc.open('정책표수정').worksheet('동판출력')
+		gc1 = gspread.authorize(creds1)
+		wks = gc1.open('정책표수정').worksheet('동판출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		embed1 = discord.Embed(
@@ -57,8 +66,8 @@ async def on_message(message):
 		
 	if message.content.startswith('!공짜폰'):
 		SearchID = message.content[len('!공짜폰')+1:]
-		gc = gspread.authorize(creds)
-		wks = gc.open('정책표수정').worksheet('무선공짜출력')
+		gc1 = gspread.authorize(creds1)
+		wks = gc1.open('정책표수정').worksheet('무선공짜출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		
@@ -80,8 +89,8 @@ async def on_message(message):
 		
 	if message.content.startswith('!외국인공짜폰'):
 		SearchID = message.content[len('!외국인공짜폰')+1:]
-		gc = gspread.authorize(creds)
-		wks = gc.open('정책표수정').worksheet('외국인공짜출력')
+		gc1 = gspread.authorize(creds1)
+		wks = gc1.open('정책표수정').worksheet('외국인공짜출력')
 		wks.update_acell('A1', SearchID)
 		result = wks.acell('B1').value
 		
@@ -128,7 +137,35 @@ async def on_message(message):
 			color=0xf29886
 			)
 		await client.send_message(client.get_channel("672022974223876096"), embed=embed2)
-		await client.send_message(message.channel, embed=embed1)	
+		await client.send_message(message.channel, embed=embed1)
+		
+	if message.content.startswith('!그레이드'):
+		gc = gspread.authorize(creds)
+		wks = gc.open('오전재고').worksheet('그레이드')
+		result = wks.acell('B1').value
+		embed1 = discord.Embed(
+			title = ' 파트너 그레이드 안내!! ',
+			description= '**```css\n' + result + ' ```**',
+			color=0x7fffd4
+			)
+		embed2 = discord.Embed(
+			title = ' 파트너 그레이드 조회!! ',
+			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
+			color=0x00ffff
+			)
+		await client.send_message(message.channel, embed=embed1)
+		await client.send_message(client.get_channel("674827771817623572"), embed=embed2)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 
 access_token = os.environ["BOT_TOKEN"]
