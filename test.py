@@ -145,7 +145,7 @@ async def on_message(message):
 		
 	if message.content.startswith('!그레이드'):
 		gc2 = gspread.authorize(creds2)
-		wks = gc2.open('오전재고').worksheet('그레이드')
+		wks = gc2.open('재고관리').worksheet('그레이드')
 		result = wks.acell('B1').value
 		embed1 = discord.Embed(
 			title = ' 파트너 그레이드 안내!! ',
@@ -164,7 +164,7 @@ async def on_message(message):
 		curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
 		krnow = curruntTime.strftime('%Y/%m/%d %H:%M')
 		gc2 = gspread.authorize(creds2)
-		wks = gc2.open('오전재고').worksheet('재고주문')
+		wks = gc2.open('재고관리').worksheet('재고주문')
 		wks.insert_row([krnow, message.channel.name, message.author.display_name, message.content[4:]], 3)
 		embed1 = discord.Embed(
 			title = message.author.display_name + "님 의 주문 ",
@@ -343,7 +343,7 @@ async def on_message(message):
 	if message.content.startswith('!나이'):
 		SearchID = message.content[len('!나이')+1:]
 		gc2 = gspread.authorize(creds2)
-		wks = gc2.open('오전재고').worksheet('만나이계산기')
+		wks = gc2.open('재고관리').worksheet('만나이계산기')
 		
 		wks.update_acell('C8', SearchID)
 		result1 = wks.acell('H8').value
@@ -360,7 +360,7 @@ async def on_message(message):
 	if message.content.startswith('!유지기간'):
 		SearchID = message.content[len('!유지기간')+1:]
 		gc2 = gspread.authorize(creds2)
-		wks = gc2.open('오전재고').worksheet('유지기간')
+		wks = gc2.open('재고관리').worksheet('유지기간')
 		wks.update_acell('a1', SearchID)
 		result = wks.acell('b1').value
 		
