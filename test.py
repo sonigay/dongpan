@@ -124,7 +124,7 @@ async def on_message(message):
 		command_list += '엑셀다운 링크\n'
 		command_list += 'https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pub?output=xlsx \n'     #!링크
 		gc1 = gspread.authorize(creds1)
-		wks = gc1.open('정책표수정').worksheet('무선구두')
+		wks = gc1.open('정책표관리').worksheet('무선구두')
 		result = wks.acell('E3').value
 		embed1 = discord.Embed(
 			title = ':bar_chart: 정책 적용일시: ' + result + '',
