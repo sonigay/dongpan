@@ -127,7 +127,7 @@ async def on_message(message):
 		wks = gc1.open('정책표관리').worksheet('무선구두')
 		result = wks.acell('E3').value
 		embed1 = discord.Embed(
-			title = ':bar_chart: 정책 적용일시: ' + result + '',
+			title = ':bar_chart: 안내사항: ' + result + '',
 			description= command_list,
 			color=0xf29886
 			)
