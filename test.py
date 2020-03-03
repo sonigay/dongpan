@@ -116,13 +116,13 @@ async def on_message(message):
 		command_list = ''
 		command_list += '\n'
 		command_list += '📌 공지사항\n'
-		command_list += '```diff\n-2020-02-18기준 금일부터\n-방x위 지시사항으로 정책표상에 시간기재가 금지됩니다.\n-정책적용기준은 폰클 상에 작성된 기준시간과\n-"!정책표" 명령시 테이블 상단 적용일시 확인바랍니다.```'
+		command_list += '```diff\n-2020-02-18기준 금일부터\n-방x위 지시사항으로 정책표상에 시간기재가 금지됩니다.\n-정책적용기준은 정책표 제목시간\n-확인바랍니다.```'
 		command_list += '\n'
-		command_list += '웹사이트 링크\n'
-		command_list += 'https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pubhtml# \n'     #!링크
-		command_list += '\n'
-		command_list += '엑셀다운 링크\n'
-		command_list += 'https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pub?output=xlsx \n'     #!링크
+		command_list += '폰클사이트 링크\n'
+		command_list += 'https://shop.poncle.co.kr/?action=login&url=Lw== \n'     #!링크
+		command_list += ''
+		command_list += ''
+		command_list += ''     #!링크
 		gc1 = gspread.authorize(creds1)
 		wks = gc1.open('정책표관리').worksheet('무선구두')
 		result = wks.acell('E3').value
@@ -133,7 +133,7 @@ async def on_message(message):
 			)
 		embed1.add_field(
 			name="❗ 주의사항 ",
-			value= '```diff\n-위 엔드정책은 참고용입니다. \n-정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n-맞추셔야하십니다.감사합니다.\n-폰클단가표 보는법은 앞자리 2빼고 뒷두자리 입니다.\n-그레이드확인은 "!그레이드" 로 확인 가능하십니다..```'
+			value= '```diff\n-정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n-맞추셔야하십니다.감사합니다.\n-그레이드확인은 "!그레이드" 로 확인 가능하십니다..```'
 			)
 		embed2 = discord.Embed(
 			title = ':bar_chart: 적용일시: ' + result + ' 출력!',
