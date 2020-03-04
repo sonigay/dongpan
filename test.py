@@ -564,7 +564,7 @@ async def on_message(message):
             colour=discord.Colour.green()
         )
 
-        urlBase = 'https://github.com/sonigay/dongpan/blob/master/screenshot/정책표.png'
+        urlBase = './screenshot/정책표.png'
         urlF = urlBase
         embed.set_image(url = urlF)
         await client.send_message(message.channel, embed=embed)
