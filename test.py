@@ -525,10 +525,10 @@ async def on_message(message):
 			
 
 	if message.content.startswith('!사진'):			
-		options1 = Options()
-		options1.add_argument('--start-fullscreen')
-		options1.headless = True
-		driver = webdriver.chrome()
+		options = Options()
+		options.add_argument('--start-fullscreen')
+		options.headless = True
+		driver = webdriver.Chrome(chrome_options=options)
 		driver.get('https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pubhtml#')
 
 		# 전체 페이지의 사이즈를 구하여 브라우저의 창 크기를 확대하고 스크린캡처를 합니다.
