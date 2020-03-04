@@ -558,7 +558,7 @@ async def on_message(message):
 @client.event
 async def on_message(message):
 	if message.content.startswith('!고양이'):
-		im = im.open('./screenshot/정책표.png')
+		im = Image.open('./screenshot/정책표.png')
 		await client.set_image(message.channel, im)
 			
 		
