@@ -550,7 +550,7 @@ async def on_message(message):
 		right = image_location['x'] + image_size['width']
 		bottom = image_location['y'] + image_size['height']
 		im = im.crop((left, top, right, bottom))
-		im.save('./screenshot/정책표.png')
+		im.save('./screenshot/정책표1.png')
 		await client.send_message(message.channel, "사진")
 
 
