@@ -528,7 +528,9 @@ async def on_message(message):
 		options = Options()
 		options.add_argument('--start-fullscreen')
 		options.headless = True
-		driver = webdriver.Chrome(executable_path='/app/.chromedriver/bin/chromedriver', chrome_options=options)
+		GOOGLE_CHROME_PATH = '/app/.apt/usr/bin/google_chrome'
+		CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+		driver = webdriver.Chrome(executable_path = CHROMEDRIVER_PATH, chrome_options=options)
 		driver.get('https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pubhtml#')
 		# 전체 페이지의 사이즈를 구하여 브라우저의 창 크기를 확대하고 스크린캡처를 합니다.
 		page_width = driver.execute_script('return document.body.parentNode.scrollWidth')
