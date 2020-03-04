@@ -564,9 +564,8 @@ async def on_message(message):
             colour=discord.Colour.green()
         )
 
-        urlBase = 'https://loremflickr.com/320/240?lock='
-        randomNum = random.randrange(1, 30977)
-        urlF = urlBase+str(randomNum)
+        urlBase = 'https://github.com/sonigay/dongpan/blob/master/screenshot/정책표.png'
+        urlF = urlBase
         embed.set_image(url = urlF)
         await client.send_message(message.channel, embed=embed)
 			
