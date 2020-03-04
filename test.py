@@ -550,22 +550,10 @@ async def on_message(message):
 		right = image_location['x'] + image_size['width']
 		bottom = image_location['y'] + image_size['height']
 		im = im.crop((left, top, right, bottom))
-		im.save('./screenshot/정책표1.png')
+		im.save('./정책표.png')
 		await client.send_message(message.channel, "사진")
 
-
-
-@client.event
-async def on_message(message):
-	if message.content.startswith('!고양이'):
-		im = Image.open('./screenshot/정책표.png')
-		await client.set_image(message.channel, im)
-			
-		
-		
-		
-		
-		
+	
 
 
 access_token = os.environ["BOT_TOKEN"]
