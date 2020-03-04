@@ -561,7 +561,7 @@ async def on_message(message):
 # 		urlBase = './screenshot/정책표.png'
 # 		urlF = urlBase
 # 		img = message.set_image(url = urlF)
-		await message.channel.send(file='./screenshot/정책표.png')
+		await client.send_message(message.channel, file='./screenshot/정책표.png')
 			
 		
 		
