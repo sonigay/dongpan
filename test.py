@@ -558,16 +558,10 @@ async def on_message(message):
 @client.event
 async def on_message(message):
     if message.content.startswith('!고양이'):
-        embed = discord.Embed(
-            title='고양이는',
-            description='멍멍',
-            colour=discord.Colour.green()
-        )
-
-        urlBase = './screenshot/정책표.png'
-        urlF = urlBase
-        embed.set_image(url = urlF)
-        await client.send_message(message.channel, embed=embed)
+	urlBase = './screenshot/정책표.png'
+	urlF = urlBase
+	img = img.set_image(url = urlF)
+	await client.send_message(message.channel, img)
 			
 		
 		
