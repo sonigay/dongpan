@@ -557,10 +557,10 @@ async def on_message(message):
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!고양이'):
+	if message.content.startswith('!고양이'):
 	urlBase = './screenshot/정책표.png'
 	urlF = urlBase
-	img = img.set_image(url = urlF)
+	img = message.set_image(url = urlF)
 	await client.send_message(message.channel, img)
 			
 		
