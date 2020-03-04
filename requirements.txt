@@ -8,5 +8,4 @@ arrow
 bs4
 selenium
 Image
-BytesIO
 Options
