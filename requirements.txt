@@ -7,3 +7,4 @@ PyOpenSSL
 arrow
 bs4
 selenium
+PIL
