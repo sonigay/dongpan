@@ -25,8 +25,8 @@ client2 = gspread.authorize(creds2) #재고시트
 doc1 = client1.open_by_url('https://docs.google.com/spreadsheets/d/1hL4uvq2On11zp-_JWoWMG0Gyyuty5Lhvp_gQkfTYsOI') #정책시트
 doc2 = client2.open_by_url('https://docs.google.com/spreadsheets/d/15p6G4jXmHw7Z_iRCYeFwRzkzLxqf-3Pj0c6FeVuFYBM') #재고시트
 
-CHROMEDRIVER_PATH = /app/.chromedriver/bin/chromedriver
-GOOGLE_CHROME_BIN = /app/.apt/usr/bin/google-chrome
+CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
+GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
 
 
 client = discord.Client()
@@ -527,13 +527,13 @@ async def on_message(message):
 
 	if message.content.startswith('!사진'):			
 		chrome_options = webdriver.ChromeOptions()
-		chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+		chrome_options.binary_location = os.environ.get(GOOGLE_CHROME_BIN)
 # 		chrome_options.add_argument("--headless")
 		chrome_options.add_argument("--disable-dev-shm-usage")
 		chrome_options.add_argument("--no-sandbox")
 # 		options.add_argument('--start-fullscreen')
 		chrome_options.headless = True
-		driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+		driver = webdriver.Chrome(executable_path=os.environ.get(CHROMEDRIVER_PATH), chrome_options=chrome_options)
 		driver.get('https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pubhtml#')
 		# 전체 페이지의 사이즈를 구하여 브라우저의 창 크기를 확대하고 스크린캡처를 합니다.
 		page_width = driver.execute_script('return document.body.parentNode.scrollWidth')
