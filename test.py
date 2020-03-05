@@ -551,8 +551,13 @@ async def on_message(message):
 		right = image_location['x'] + image_size['width']
 		bottom = image_location['y'] + image_size['height']
 		im = im.crop((left, top, right, bottom))
-		im.save('./정책표.png')
-		await client.send_message(message.channel, "사진")
+		basename = "사진"
+		curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
+		krnow = curruntTime.strftime('%Y_%m_%d_%H_%M')
+		filename = "_".join([basename, krnow])
+		im.save(filename+'.png')
+		pic = filename+'.png'
+		await message.channel.send(file=discord.File(pic))
 
 	
 
