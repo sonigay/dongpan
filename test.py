@@ -557,7 +557,8 @@ async def on_message(message):
 		filename = "_".join([basename, krnow])
 		im.save("SCREENSHOT")
 		pic = os.environ.get("SCREENSHOT")
-		await message.channel.send(file=discord.File(pic))
+# 		await message.channel.send(file=discord.File(pic))
+		await client.send_message(file=discord.File(pic))
 
 	
 
