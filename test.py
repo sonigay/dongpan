@@ -555,7 +555,7 @@ async def on_message(message):
 		curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
 		krnow = curruntTime.strftime('%Y_%m_%d_%H_%M')
 		filename = "_".join([basename, krnow])
-		im.save("SCREENSHOT", format(PNG))
+		im.save("SCREENSHOT", format='PNG')
 		pic = os.environ.get("SCREENSHOT")
 # 		await message.channel.send(file=discord.File(pic))
 		await client.send_message(file=discord.File(pic))
