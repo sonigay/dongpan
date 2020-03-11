@@ -18,12 +18,16 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 scope1 = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive'] #정책시트
 scope2 = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive'] #재고시트
+scope3 = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive'] #재고시트
 creds1 = ServiceAccountCredentials.from_json_keyfile_name('dongpan-699a93059b16.json', scope1) #정책시트
 creds2 = ServiceAccountCredentials.from_json_keyfile_name('jumun-8151173be58f.json', scope2) #재고시트
+creds3 = ServiceAccountCredentials.from_json_keyfile_name('jumun-8151173be58f.json', scope3) #재고시트
 client1 = gspread.authorize(creds1) #정책시트
 client2 = gspread.authorize(creds2) #재고시트
+client3 = gspread.authorize(creds3) #재고시트
 doc1 = client1.open_by_url('https://docs.google.com/spreadsheets/d/1hL4uvq2On11zp-_JWoWMG0Gyyuty5Lhvp_gQkfTYsOI') #정책시트
 doc2 = client2.open_by_url('https://docs.google.com/spreadsheets/d/15p6G4jXmHw7Z_iRCYeFwRzkzLxqf-3Pj0c6FeVuFYBM') #재고시트
+doc3 = client3.open_by_url('https://docs.google.com/spreadsheets/d/18-a0Upet-wmPWTcymSMfzNzQzrYd1u43SNeeYLfrcgM') #디메릿시트
 
 
 client = discord.Client()
@@ -67,6 +71,30 @@ async def on_message(message):
 			)
 		await client.send_message(client.get_channel("674653007132229632"), embed=embed2)
 		await client.send_message(message.channel, embed=embed1)
+		
+		
+	if message.content.startswith('!디메릿'):
+		SearchID = message.content[len('!디메릿')+1:]
+		gc3 = gspread.authorize(creds3)
+		wks = gc3.open('디메릿관리').worksheet('디메릿출력')
+		wks2 = gc3.open('디메릿관리').worksheet('디메릿금액정리')
+		wks.update_acell('A1', SearchID)
+		result = wks.acell('B1').value
+		result2 = wks2.acell('B2').value
+		
+		embed1 = discord.Embed(
+			title = ' 적용일시: ' + result2 + SearchID + ' 디메릿 안내 ',
+			description= '**```css\n' + SearchID + '  적용중인 디메릿 입니다. ' + result + ' ```**',
+			color=0x4BAF4B
+			)
+		embed2 = discord.Embed(
+			title = SearchID + ' 디메릿 조회!! ',
+			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + '```',
+			color=0x4BAF4B
+			)
+		await client.send_message(client.get_channel("687385604396417079"), embed=embed2)
+		await client.send_message(message.channel, embed=embed1)		
+		
 		
 		
 		
