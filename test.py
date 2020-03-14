@@ -150,6 +150,7 @@ async def on_message(message):
 		command_list += '\n'
 		command_list += '폰클사이트 링크\n'
 		command_list += 'https://shop.poncle.co.kr/?action=login&url=Lw== \n'     #!링크
+		command_list += '\n'
 		command_list += ''
 		command_list += ''
 		command_list += ''     #!링크
@@ -161,19 +162,9 @@ async def on_message(message):
 			description= command_list,
 			color=0xf29886
 			)
-		embed1.add_field(
-			name=":bar_chart: 정책 적용일시: ",
-			value= '```' + result + '```',
-			inline = False
-			)
-		embed1.add_field(
-			name="❗ 주의사항 ",
-			value= '```fix\n엔드정책은 참고용입니다. \n정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n맞추셔야하십니다.감사합니다.```',
-			inline = False
-			)		
 		embed2 = discord.Embed(
-			title = ':bar_chart: 적용일시: ',
-			description= '```'+ result + '폰클링크안내!\n\n출력자:' + message.author.display_name +'\n거래처:' + message.channel.name + '```',
+			title = '폰클링크안내!',
+			description= '```\n출력자:' + message.author.display_name +'\n거래처:' + message.channel.name + '```',
 			color=0xf29886
 			)
 		await client.send_message(client.get_channel("672022974223876096"), embed=embed2)
