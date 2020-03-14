@@ -163,11 +163,11 @@ async def on_message(message):
 			)
 		embed1.add_field(
 			name=":bar_chart: 정책 적용일시: ",
-			value= '```fix\n엔드정책은 참고용입니다. \n정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n맞추셔야하십니다.감사합니다.```'
+			value= '```fix\n' + result + '```'
 			)
 		embed1.add_field(
 			name="❗ 주의사항 ",
-			value= '```fix\n' + result + '```'
+			value= '```fix\n엔드정책은 참고용입니다. \n정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n맞추셔야하십니다.감사합니다.```'
 			)		
 		embed2 = discord.Embed(
 			title = ':bar_chart: 적용일시: ',
