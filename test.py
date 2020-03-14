@@ -145,6 +145,8 @@ async def on_message(message):
 	if message.content == '!정책표':
 		command_list = ''
 		command_list += '\n'
+		command_list += result
+		command_list += '\n'
 		command_list += '📌 공지사항\n'
 		command_list += '```css\n⭕2020-02-18기준 부터\n⭕방x위 지시사항으로 정책표상에 [시간기재가 금지]됩니다.\n⭕정책적용기준은 정책표 제목시간 확인바랍니다.\n⭕폰클단가표 보는법은\n⭕정책표 왼편상단 보안코드란에 [매장P코드] 넣어주시고\n⭕[P는 대문자]이어야 하고 뒤에 [0세개는 빼주세요.]\n⭕그레이드확인은 [!그레이드] 로 확인 가능하십니다..\n⭕장기고객 기변프로모션은 [!비하인드] 로 확인 가능하십니다..\n⭕가족결합정책 종료!! ```'
 		command_list += '\n'
@@ -157,7 +159,7 @@ async def on_message(message):
 		wks = gc1.open('정책표관리').worksheet('무선구두')
 		result = wks.acell('E3').value
 		embed1 = discord.Embed(
-			title = ':bar_chart: 정책 적용일시: ' + result + '',
+			title = ':bar_chart: 정책 적용일시: ',
 			description= command_list,
 			color=0xf29886
 			)
@@ -166,8 +168,8 @@ async def on_message(message):
 			value= '```fix\n엔드정책은 참고용입니다. \n정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n맞추셔야하십니다.감사합니다.```'
 			)
 		embed2 = discord.Embed(
-			title = ':bar_chart: 적용일시: ' + result + '폰클링크안내!',
-			description= '```' "출력자:" + message.author.display_name +"\n거래처:" + message.channel.name + '```',
+			title = ':bar_chart: 적용일시: ',
+			description= '```'+ result + '폰클링크안내!\n'"출력자:" + message.author.display_name +"\n거래처:" + message.channel.name + '```',
 			color=0xf29886
 			)
 		await client.send_message(client.get_channel("672022974223876096"), embed=embed2)
