@@ -83,12 +83,12 @@ async def on_message(message):
 		result2 = wks2.acell('B2').value
 		
 		embed1 = discord.Embed(
-			title = ' 적용일시: ' + result2 + ' 디메릿 안내 ',
+			title = ' 적용일시: ' + result2 + ' 안내 ',
 			description= '**```css\n' + SearchID + '' + result + ' ```**',
 			color=0x4BAF4B
 			)
 		embed2 = discord.Embed(
-			title = SearchID + ' 디메릿 조회!! ',
+			title = SearchID + ' 디메릿 지역 조회!! ',
 			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + '```',
 			color=0x4BAF4B
 			)
