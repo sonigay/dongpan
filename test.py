@@ -614,7 +614,7 @@ async def on_message(message):
 			inline=False
 			)
 		await client.send_message(client.get_channel("672022974223876096"), embed=embed2)
-		await client.send_message(message.channel, embed=embed, file=discord.File(pic))
+		await client.send_message(file=discord.File(pic))
 
 	if message.content.startswith('!외국인끝단가'):
 		options = Options()
