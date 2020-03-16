@@ -613,7 +613,7 @@ async def on_message(message):
 			value='```' "출력자:" + message.author.display_name + "\n거래처:" + message.channel.name + '```',
 			inline=False
 			)
-		await client.get_channel(672022974223876096).send(embed=embed2)
+		await client.get_channel("672022974223876096").send(embed=embed2)
 		await message.channel.send(embed=embed, file=discord.File(pic))
 
 	if message.content.startswith('!외국인끝단가'):
@@ -681,7 +681,7 @@ async def on_message(message):
 			value='```' "출력자:" + message.author.display_name + "\n거래처:" + message.channel.name + '```',
 			inline=False
 			)
-		await client.get_channel(672022974223876096).send(embed=embed2)
+		await client.get_channel("672022974223876096").send(embed=embed2)
 		await message.channel.send(embed=embed, file=discord.File(pic))
 	
 
