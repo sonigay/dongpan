@@ -551,7 +551,7 @@ async def on_message(message):
 	if message.content.startswith('!끝단가'):
 		options = Options()
 		options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
-		options.add_argument('--single-process')
+		options.add_argument('--disable-dev-shm-usage')
 		options.headless = True
 		driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=options)
 		driver.get('https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pubhtml#')
@@ -617,7 +617,7 @@ async def on_message(message):
 	if message.content.startswith('!외국인끝단가'):
 		options = Options()
 		options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
-		options.add_argument('--single-process')
+		options.add_argument('--disable-dev-shm-usage')
 		options.headless = True
 		driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=options)
 		driver.get('https://docs.google.com/spreadsheets/d/1HNsgbvHpOg15RefBZOvDKE04SzJXVTq9spe2274gQ_4/pubhtml')
