@@ -547,44 +547,136 @@ async def on_message(message):
 			
 			
 
-	if message.content.startswith('!사진'):			
-		chrome_options = webdriver.ChromeOptions()
-		chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-# 		chrome_options.add_argument("--headless")
-		chrome_options.add_argument("--disable-dev-shm-usage")
-		chrome_options.add_argument("--no-sandbox")
-# 		options.add_argument('--start-fullscreen')
-		chrome_options.headless = True
-		driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
+	if message.content.startswith('!끝단가'):
+		options = Options()
+		options.add_argument('--start-fullscreen')
+		options.headless = True
+		driver = webdriver.Chrome(executable_path='./chromedriver', chrome_options=options)
 		driver.get('https://docs.google.com/spreadsheets/d/1gGOqkMcSau3lXHnP5_UZfEW1rbJOi5czd3w-22QX2j4/pubhtml#')
-		# 전체 페이지의 사이즈를 구하여 브라우저의 창 크기를 확대하고 스크린캡처를 합니다.
+		driver.implicitly_wait(5)
+
+# 전체 페이지의 사이즈를 구하여 브라우저의 창 크기를 확대하고 스크린캡처를 합니다.
 		page_width = driver.execute_script('return document.body.parentNode.scrollWidth')
 		page_height = driver.execute_script('return document.body.parentNode.scrollHeight')
 		driver.set_window_size("1050", "2000")
 		png = driver.get_screenshot_as_png()
 
-		# 특정 element의 위치를 구하고 selenium 창을 닫습니다.
+# 특정 element의 위치를 구하고 selenium 창을 닫습니다.
 		element = driver.find_element_by_class_name('waffle')
 		image_location = element.location
 		image_size = element.size
-		driver.quit()
 
-		# 이미지를 element의 위치에 맞춰서 crop 하고 저장합니다.
+# 이미지를 element의 위치에 맞춰서 crop 하고 저장합니다.
 		im = Image.open(BytesIO(png))
 		left = image_location['x']
 		top = image_location['y']
 		right = image_location['x'] + image_size['width']
 		bottom = image_location['y'] + image_size['height']
 		im = im.crop((left, top, right, bottom))
-		basename = "사진"
-		curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
-		krnow = curruntTime.strftime('%Y_%m_%d_%H_%M')
-		filename = "_".join([basename, krnow])
-		im.save("SCREENSHOT", format='PNG')
-		pic = os.environ.get("SCREENSHOT")
-# 		await message.channel.send(file=discord.File(pic))
-		await client.send_message(file=discord.File(pic))
+# basename = "사진"
+# curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
+# krnow = curruntTime.strftime('%Y_%m_%d_%H_%M')
+# filename = "_".join([basename, krnow])
+		im.save('끝단가.png')
+		pic = '끝단가.png'
+		gc1 = gspread.authorize(creds1)
+		wks = gc1.open('정책표관리').worksheet('무선구두')
+		result = wks.acell('E3').value
+		driver.quit()
 
+		embed = discord.Embed(
+			title='끝단가 출력!',
+			description='',
+			color=0xf29886
+			)
+		embed.add_field(
+			name=":bar_chart: 정책 적용일시: ",
+			value='```' + result + '```',
+			inline=False
+			)
+		embed.add_field(
+			name="❗ 주의사항 ",
+			value='```fix\n엔드정책은 참고용입니다. \n정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n맞추셔야하십니다.감사합니다.```',
+			inline=False
+			)
+		embed2 = discord.Embed(
+			title='끝단가 출력!',
+			description='```정책 적용일시: ' + result + '```',
+			color=0xf29886
+			)
+		embed2.add_field(
+			name="출력자 및 거래처",
+			value='```' "출력자:" + message.author.display_name + "\n거래처:" + message.channel.name + '```',
+			inline=False
+			)
+		await client.get_channel(672022974223876096).send(embed=embed2)
+		await message.channel.send(embed=embed, file=discord.File(pic))
+
+	if message.content.startswith('!외국인끝단가'):
+		options = Options()
+		options.add_argument('--start-fullscreen')
+		options.headless = True
+		driver = webdriver.Chrome(executable_path='./chromedriver', chrome_options=options)
+		driver.get('https://docs.google.com/spreadsheets/d/1HNsgbvHpOg15RefBZOvDKE04SzJXVTq9spe2274gQ_4/pubhtml')
+		driver.implicitly_wait(5)
+
+# 전체 페이지의 사이즈를 구하여 브라우저의 창 크기를 확대하고 스크린캡처를 합니다.
+		page_width = driver.execute_script('return document.body.parentNode.scrollWidth')
+		page_height = driver.execute_script('return document.body.parentNode.scrollHeight')
+		driver.set_window_size("1050", "2000")
+		png = driver.get_screenshot_as_png()
+
+# 특정 element의 위치를 구하고 selenium 창을 닫습니다.
+		element = driver.find_element_by_class_name('waffle')
+		image_location = element.location
+		image_size = element.size
+
+# 이미지를 element의 위치에 맞춰서 crop 하고 저장합니다.
+		im = Image.open(BytesIO(png))
+		left = image_location['x']
+		top = image_location['y']
+		right = image_location['x'] + image_size['width']
+		bottom = image_location['y'] + image_size['height']
+		im = im.crop((left, top, right, bottom))
+# basename = "사진"
+# curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
+# krnow = curruntTime.strftime('%Y_%m_%d_%H_%M')
+# filename = "_".join([basename, krnow])
+		im.save('외국인끝단가.png')
+		pic = '외국인끝단가.png'
+		gc1 = gspread.authorize(creds1)
+		wks = gc1.open('정책표관리').worksheet('무선구두')
+		result = wks.acell('E3').value
+		driver.quit()
+
+		embed = discord.Embed(
+			title='외국인끝단가 출력!',
+			description='',
+			color=0xf29886
+			)
+		embed.add_field(
+			name=":bar_chart: 정책 적용일시: ",
+			value='```' + result + '```',
+			inline=False
+			)
+		embed.add_field(
+			name="❗ 주의사항 ",
+			value='```fix\n엔드정책은 참고용입니다. \n정산은 폰클 정책표에서 그레이드 합산후 날짜별로 구두추가하시고 \n맞추셔야하십니다.감사합니다.```',
+			inline=False
+			)
+		embed2 = discord.Embed(
+			title='외국인끝단가 출력!',
+			description='```정책 적용일시: ' + result + '```',
+			color=0xf29886
+			)
+		embed2.add_field(
+			name="출력자 및 거래처",
+			value='```' "출력자:" + message.author.display_name + "\n거래처:" + message.channel.name + '```',
+			inline=False
+			)
+		await client.get_channel(672022974223876096).send(embed=embed2)
+		await message.channel.send(embed=embed, file=discord.File(pic))
 	
 
 
