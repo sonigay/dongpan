@@ -551,6 +551,8 @@ async def on_message(message):
 	if message.content.startswith('!끝단가'):
 		options = Options()
 		options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
+		options.add_argument('--headless')
+		options.add_argument('--no-sandbox')
 		options.add_argument('--disable-dev-shm-usage')
 		options.headless = True
 		driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=options)
@@ -617,6 +619,8 @@ async def on_message(message):
 	if message.content.startswith('!외국인끝단가'):
 		options = Options()
 		options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
+		options.add_argument('--headless')
+		options.add_argument('--no-sandbox')		
 		options.add_argument('--disable-dev-shm-usage')
 		options.headless = True
 		driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'), chrome_options=options)
