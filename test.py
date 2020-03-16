@@ -581,7 +581,7 @@ async def on_message(message):
 # curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
 # krnow = curruntTime.strftime('%Y_%m_%d_%H_%M')
 # filename = "_".join([basename, krnow])
-		im.save('끝단가.png')
+		im.save('./screenshot/끝단가.png')
 		pic = '끝단가.png'
 		gc1 = gspread.authorize(creds1)
 		wks = gc1.open('정책표관리').worksheet('무선구두')
@@ -649,7 +649,7 @@ async def on_message(message):
 # curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
 # krnow = curruntTime.strftime('%Y_%m_%d_%H_%M')
 # filename = "_".join([basename, krnow])
-		im.save('외국인끝단가.png')
+		im.save('./screenshot/외국인끝단가.png')
 		pic = '외국인끝단가.png'
 		gc1 = gspread.authorize(creds1)
 		wks = gc1.open('정책표관리').worksheet('무선구두')
