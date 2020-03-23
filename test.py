@@ -95,7 +95,7 @@ async def on_message(message):
 			)
 		embed1.add_field(
 			name="자체 P코드 개통시",
-			value= '**```css\n' + SearchID + '  정책입니다. ' + result2 + ' ```**',
+			value= '**```css\n' + SearchID + '  정책입니다. ' + result1 + ' ```**',
 			inline=True
 			)		
 		embed2 = discord.Embed(
