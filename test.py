@@ -330,6 +330,7 @@ async def on_message(message):
 		command_list += '!영업명령어\n'     #!명령어        
 		command_list += '!모델명\n'     #!모델명
 		command_list += '!거래처\n'     #!모델명
+		command_list += '!담당자 거래처코드\n---< ex)!담당자 a02 >\n'     #!모델명		
 		command_list += '!플러스관계설정\n'     #!플러스관계설정
 		command_list += '!에이스관계설정\n'     #!에이스관계설정
 		command_list += '!신규안내\n'     #!신규안내
