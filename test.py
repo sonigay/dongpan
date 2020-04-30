@@ -164,22 +164,22 @@ async def on_message(message):
 		await client.send_message(client.get_channel("672022974223876096"), embed=embed2)
 		await client.send_message(message.channel, embed=embed1)
 		
-	if message.content.startswith('!그레이드'):
-		gc2 = gspread.authorize(creds2)
-		wks = gc2.open('재고관리').worksheet('그레이드')
-		result = wks.acell('B1').value
-		embed1 = discord.Embed(
-			title = ' 파트너 그레이드 안내!! ',
-			description= '**```css\n' + result + ' ```**',
-			color=0x7fffd4
-			)
-		embed2 = discord.Embed(
-			title = ' 파트너 그레이드 조회!! ',
-			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
-			color=0x00ffff
-			)
-		await client.send_message(message.channel, embed=embed1)
-		await client.send_message(client.get_channel("674827771817623572"), embed=embed2)
+#	if message.content.startswith('!그레이드'):
+#		gc2 = gspread.authorize(creds2)
+#		wks = gc2.open('재고관리').worksheet('그레이드')
+#		result = wks.acell('B1').value
+#		embed1 = discord.Embed(
+#			title = ' 파트너 그레이드 안내!! ',
+#			description= '**```css\n' + result + ' ```**',
+#			color=0x7fffd4
+#			)
+#		embed2 = discord.Embed(
+#			title = ' 파트너 그레이드 조회!! ',
+#			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
+#			color=0x00ffff
+#			)
+#		await client.send_message(message.channel, embed=embed1)
+#		await client.send_message(client.get_channel("674827771817623572"), embed=embed2)
 		
 	if message.content.startswith('!주문'):
 		curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
