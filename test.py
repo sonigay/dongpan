@@ -376,7 +376,7 @@ async def on_message(message):
 			)
 		embed.add_field(
 			name="🌐 동판관련 명령어 ",
-			value= '```Cs\n# !결합\n\n# !동판 동판\n'+'@ !동판 소호신규\n@ !동판 소호기변\n@ !동판 후결합\n@ !동판 재약정\n@ !동판 재약정단독\n@ !동판 단독\n\n ```',
+			value= '```Cs\n# !결합\n\n# !동판 동판\n'+'@ !동판 소호신규\n@ !동판 소호기변\n@ !동판 후결합\n@ !동판 재약정동판스마트\n@ !동판 재약정동판기존\n@ !동판 재약정단독스마트\n@ !동판 재약정단독기존\n@ !동판 단독\n\n ```',
 			inline = True
 			)
 		embed.add_field(
@@ -420,7 +420,7 @@ async def on_message(message):
 			)
 		embed.add_field(
 			name="🌐 동판관련 명령어 ",
-			value= '```Cs\n# !결합\n\n# !동판 동판\n'+'@ !동판 소호신규\n@ !동판 소호기변\n@ !동판 후결합\n@ !동판 재약정\n@ !동판 재약정단독\n@ !동판 단독\n\n ```',
+			value= '```Cs\n# !결합\n\n# !동판 동판\n'+'@ !동판 소호신규\n@ !동판 소호기변\n@ !동판 후결합\n@ !동판 재약정동판스마트\n@ !동판 재약정동판기존\n@ !동판 재약정단독스마트\n@ !동판 재약정단독기존\n@ !동판 단독\n\n ```',
 			inline = True
 			)
 		embed.add_field(
