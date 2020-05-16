@@ -356,7 +356,7 @@ async def on_message(message):
 		command_list += '!명령어\n'     #!명령어
 		command_list += '!모델명\n'     #!모델명
 		command_list += '!신규안내\n'     #!신규안내
-		command_list += '!신규안내\n'     #!신규안내		
+		command_list += '!요금수납\n'     #!신규안내		
 		command_list += '!정산\n'     #!정산
 		
 		embed = discord.Embed(
