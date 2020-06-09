@@ -59,7 +59,7 @@ async def on_message(message):
 		description='```fix\n동판정책 채증이 매우 심한관계로\n담당 영업사원 통해서 구두 확인 바랍니다.```',
 		color=0xf29886
 		)
-		await message.channel.send(embed=embed)
+		await client.send_message(message.channel, embed=embed)
 		
 		
 		
