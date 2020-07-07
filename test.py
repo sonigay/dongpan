@@ -52,9 +52,9 @@ async def on_member_join(member):
 @client.event
 async def on_message(message):
     
-# 동판채증 문구 안나오는 채널 제일정보통신 / 홍남옥 영업1 홍남옥 영업2 / 노성수대표님 관리     
+# 동판채증 문구 안나오는 채널 제일정보통신 / 홍남옥 영업1  /KR1 / KR2 / KR3   
 	if message.content.startswith('!동판'):
-		if message.channel.id != '667243782604849155' and message.channel.id != '677215049424699403' and message.channel.id != '691736848325672960' and message.channel.id != '729579799907008544' and message.channel.id != '667245522549211138' and message.channel.id != '667246234851082240' and message.channel.id != '667245576014004256':
+		if message.channel.id != '667243782604849155' and message.channel.id != '677215049424699403' and message.channel.id != '667245522549211138' and message.channel.id != '667246234851082240' and message.channel.id != '667245576014004256':
 			embed = discord.Embed(
 			title='',
 			description='```fix\n동판정책 채증이 매우 심한관계로\n담당 영업사원 통해서 구두 확인 바랍니다.```',
