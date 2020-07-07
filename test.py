@@ -63,7 +63,7 @@ async def on_message(message):
 			await client.send_message(message.channel, embed=embed)
 		
 		
-# 동판 나오는 채널 제일정보		
+# 동판 나오는 채널 제일정보 , KR1 , KR2 , KR3	
 	if message.content == '!동판':
 		if message.channel.id == '667243782604849155' or message.channel.id == '667245522549211138' or message.channel.id == '667246234851082240' or message.channel.id == '667245576014004256':
 			gc1 = gspread.authorize(creds1)		
