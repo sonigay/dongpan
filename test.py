@@ -39,7 +39,7 @@ async def on_ready():
 	print(client.user.name)
 	print(client.user.id)
 	print("----------------")
-	await client.change_presence(game=discord.game(name='업무지원', type=1))
+	await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name="업무지원", type=1), afk=False)
 
 @client.event
 async def on_member_join(member):
