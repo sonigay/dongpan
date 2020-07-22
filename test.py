@@ -426,10 +426,10 @@ async def on_message(message):
 			value='```' + result16 + '```',
 			inline = True
 			)
-		await client.send_message(embed=embed)
-		await client.send_message(embed=embed1)
-		await client.send_message(embed=embed2)
-		await client.send_message(embed=embed3)			
+		await message.channel.send(embed=embed)
+		await message.channel.send(embed=embed1)
+		await message.channel.send(embed=embed2)
+		await message.channel.send(embed=embed3)			
 			
 
 		
