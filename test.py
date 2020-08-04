@@ -46,7 +46,7 @@ async def on_member_join(member):
     sleep(1)	
     fmt = '{1.name} 에 오신것을 환영합니다.\n{0.mention} 님!! \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다. '
     channel = member.server.get_channel(661832869521391646)
-    return await message.channel.send(channel, fmt.format(member, member.server))
+    return await message.get_channel(channel).send(fmt.format(member, member.server))
 
 
 @client.event
