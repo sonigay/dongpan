@@ -54,7 +54,7 @@ async def on_message(message):
     
 # 동판채증 문구 안나오는 채널 제일정보통신 / 홍남옥 영업1  /KR1 / KR2 / KR3   
 	if message.content.startswith('!동판'):
-		if message.channel.id != (667243782604849155) and message.channel.id != (667243696915218432) and message.channel.id != (667247397075681299) and message.channel.id != (695294323272450048) and message.channel.id != (677215049424699403) and message.channel.id != (667245522549211138) and message.channel.id != (667246234851082240) and message.channel.id != (667245576014004256) and message.channel.id != (667241204739604490) and message.channel.id != (667245114619592765) and message.channel.id != (695294737191534643):
+		if message.channel.id != (667243782604849155) and message.channel.id != (695295376944791565) and message.channel.id != (695295397471453276) and message.channel.id != (667243696915218432) and message.channel.id != (667247397075681299) and message.channel.id != (695294323272450048) and message.channel.id != (677215049424699403) and message.channel.id != (667245522549211138) and message.channel.id != (667246234851082240) and message.channel.id != (667245576014004256) and message.channel.id != (667241204739604490) and message.channel.id != (667245114619592765) and message.channel.id != (695294737191534643):
 			embed = discord.Embed(
 			title='',
 			description='```fix\n동판정책 채증이 매우 심한관계로\n담당 영업사원 통해서 구두 확인 바랍니다.```',
@@ -65,7 +65,7 @@ async def on_message(message):
 		
 # 동판 나오는 채널 제일정보 , KR1 , KR2 , KR3	
 	if message.content == '!동판':
-		if message.channel.id == (667243782604849155) or message.channel.id == (667243696915218432) or message.channel.id == (667247397075681299) or message.channel.id == (695294323272450048) or message.channel.id == (667245522549211138) or message.channel.id == (667246234851082240) or message.channel.id == (667245576014004256) or message.channel.id == (667241204739604490) or message.channel.id == (667245114619592765) or message.channel.id == (695294737191534643):
+		if message.channel.id == (667243782604849155) or message.channel.id == (695295376944791565) or message.channel.id == (695295376944791565) or message.channel.id == (667243696915218432) or message.channel.id == (667247397075681299) or message.channel.id == (695294323272450048) or message.channel.id == (667245522549211138) or message.channel.id == (667246234851082240) or message.channel.id == (667245576014004256) or message.channel.id == (667241204739604490) or message.channel.id == (667245114619592765) or message.channel.id == (695294737191534643):
 			gc1 = gspread.authorize(creds1)		
 			wks = gc1.open('정책표관리').worksheet('동판구두2')
 			result = wks.acell('au2').value #정책 적용일시
