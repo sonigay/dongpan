@@ -271,7 +271,7 @@ async def on_message(message):
 		result2 = wks.acell('g6').value # 광기가동판 TV프리미엄 모바일 재가입/정책기변
 		result3 = wks.acell('f7').value # 광기가동판 TV베이직 모바일 신규/MNP
 		result4 = wks.acell('g7').value # 광기가동판 TV베이직 모바일 재가입/정책기변
-		result7 = wks.acell('h9').value # 슬림동판 TV프리미엄 모바일 신규/MNP
+		result7 = wks.acell('f9').value # 슬림동판 TV프리미엄 모바일 신규/MNP
 		result8 = wks.acell('g9').value # 슬림동판 TV프리미엄 모바일 재가입/정책기변
 		result9 = wks.acell('f10').value # 슬림동판 TV베이직 모바일 신규/MNP
 		result10 = wks.acell('g10').value # 슬림동판 TV베이직 모바일 재가입/정책기변
