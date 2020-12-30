@@ -46,8 +46,8 @@ async def on_member_join(member):
     sleep(1)	
     channel = client.get_channel(661832869521391646)
     
-    await member.send('방갑습니다.')
-    await channel.send('{1.name} 에 오신것을 환영합니다.\n{0.mention} 님!! \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.')
+    await member.send('```방갑습니다.```')
+    await channel.send('```{1.name} 에 오신것을 환영합니다.\n{0.mention} 님!! \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```')
 
 @client.event
 async def on_message(message):
