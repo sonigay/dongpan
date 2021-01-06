@@ -185,7 +185,7 @@ async def on_message(message):
 				inline = True
 				)
 			embed1.add_field(
-				name="모바일(재가입/기변)",
+				name="모바일(재가입/기변 )",
 				value='```' + result4 + '```',
 				inline = True
 				)
