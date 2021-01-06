@@ -318,31 +318,39 @@ async def on_message(message):
 		wks = gc1.open('정책표관리').worksheet('동판구두2')
 		result0 = wks.acell('au1').value #정책 적용일시
 		result = wks.acell('au2').value #정책 적용일시
-		result1 = wks.acell('f6').value # 광기가동판 TV프리미엄 모바일 신규/MNP
-		result2 = wks.acell('g6').value # 광기가동판 TV프리미엄 모바일 재가입/정책기변
-		result3 = wks.acell('f7').value # 광기가동판 TV베이직 모바일 신규/MNP
-		result4 = wks.acell('g7').value # 광기가동판 TV베이직 모바일 재가입/정책기변
-		result7 = wks.acell('f9').value # 슬림동판 TV프리미엄 모바일 신규/MNP
-		result8 = wks.acell('g9').value # 슬림동판 TV프리미엄 모바일 재가입/정책기변
-		result9 = wks.acell('f10').value # 슬림동판 TV베이직 모바일 신규/MNP
-		result10 = wks.acell('g10').value # 슬림동판 TV베이직 모바일 재가입/정책기변
-		result13 = wks.acell('f12').value # 광랜동판 TV프리미엄 모바일 신규/MNP
-		result14 = wks.acell('g12').value # 광랜동판 TV프리미엄 모바일 재가입/정책기변
-		result15 = wks.acell('f13').value # 광랜동판 TV베이직 모바일 신규/MNP
-		result16 = wks.acell('g13').value # 광랜동판 TV베이직 모바일 재가입/정책기변
-		result17 = wks.acell('AD3').value # 상품권추가
-		result18 = wks.acell('AI3').value # IOT추가
-		result19 = wks.acell('AK3').value # 셋탑추가
-		result20 = wks.acell('AM3').value # TV프리2추가
-		result21 = wks.acell('AD6').value # 동판 상품권금액
-		result22 = wks.acell('AI6').value # 동판 IOT추가
-		result23 = wks.acell('AK6').value # 동판 , 후결합 셋탑추가
-		result24 = wks.acell('AM6').value # 동판 TV프리2추가
-		result25 = wks.acell('AO3').value # 단독 TV프리2 설명
-		result26 = wks.acell('AO6').value # 단독 TV프리2 프리미엄
-		result27 = wks.acell('AO7').value # 단독 TV프리2 설명
-		result30 = wks.acell('As3').value # 안정화
-		result31 = wks.acell('As6').value # 안정화
+		result1 = wks.acell('F6').value # 광기가동판 TV프리미엄 모바일 신규/MNP
+		result2 = wks.acell('G6').value # 광기가동판 TV프리미엄 모바일 재가입/정책기변
+		result3 = wks.acell('F7').value # 광기가동판 TV베이직 모바일 신규/MNP
+		result4 = wks.acell('G7').value # 광기가동판 TV베이직 모바일 재가입/정책기변
+		result5 = wks.acell('F8').value # 광기가동판 TV베이직 모바일 신규/MNP
+		result6 = wks.acell('G8').value # 광기가동판 TV베이직 모바일 재가입/정책기변
+		result7 = wks.acell('F10').value # 슬림동판 TV프리미엄 모바일 신규/MNP
+		result8 = wks.acell('G10').value # 슬림동판 TV프리미엄 모바일 재가입/정책기변
+		result9 = wks.acell('F11').value # 슬림동판 TV베이직 모바일 신규/MNP
+		result10 = wks.acell('G11').value # 슬림동판 TV베이직 모바일 재가입/정책기변
+		result11 = wks.acell('F12').value # 광랜동판 TV프리미엄 모바일 신규/MNP
+		result12 = wks.acell('G12').value # 광랜동판 TV프리미엄 모바일 재가입/정책기변
+		result13 = wks.acell('F14').value # 광랜동판 TV베이직 모바일 신규/MNP
+		result14 = wks.acell('G14').value # 광랜동판 TV베이직 모바일 재가입/정책기변
+		result15 = wks.acell('F15').value # 광기가동판 TV베이직 모바일 신규/MNP
+		result16 = wks.acell('G15').value # 광기가동판 TV베이직 모바일 재가입/정책기변
+		result17 = wks.acell('F16').value # 광기가동판 TV베이직 모바일 신규/MNP
+		result18 = wks.acell('G16').value # 광기가동판 TV베이직 모바일 재가입/정책기변
+		result19 = wks.acell('AD3').value # 상품권추가
+		result20 = wks.acell('AI3').value # IOT추가
+		result21 = wks.acell('AK3').value # 셋탑추가
+		result22 = wks.acell('AM3').value # TV프리2추가
+		result23 = wks.acell('AD6').value # 동판 상품권금액
+		result24 = wks.acell('AI6').value # 동판 IOT추가
+		result25 = wks.acell('AK6').value # 동판 , 후결합 셋탑추가
+		result26 = wks.acell('AM6').value # 동판 TV프리2추가
+		result27 = wks.acell('AO3').value # 단독 TV프리2 설명
+		result28 = wks.acell('AO6').value # 단독 TV프리2 프리미엄
+		result29 = wks.acell('AO7').value # 단독 TV프리2 설명
+		result30 = wks.acell('AU3').value # 단독 TV프리2 설명
+		result31 = wks.acell('AU6').value # 단독 TV프리2 설명
+		result32 = wks.acell('As3').value # 안정화
+		result33 = wks.acell('As6').value # 안정화
 
 		embed = discord.Embed(
 			title='🌐 유선 후결합 동판 정책',
@@ -365,16 +373,6 @@ async def on_message(message):
 			inline = False
 			)
 		embed.add_field(
-			name= result17,
-			value='```' + result21 + '```',
-			inline = False
-			)
-		embed.add_field(
-			name= result18,
-			value='```' + result22 + '```',
-			inline = False
-			)
-		embed.add_field(
 			name= result19,
 			value='```' + result23 + '```',
 			inline = False
@@ -385,15 +383,50 @@ async def on_message(message):
 			inline = False
 			)
 		embed.add_field(
-			name= result25,
-			value='```' + result26 +"\n"+ result27 + '```',
+			name= result21,
+			value='```' + result25 + '```',
+			inline = False
+			)
+		embed.add_field(
+			name= result22,
+			value='```' + result26 + '```',
+			inline = False
+			)
+		embed.add_field(
+			name= result27,
+			value='```' + result28 +"\n"+ result29 + '```',
 			inline = False
 			)
 		embed.add_field(
 			name= result30,
-			value='```diff\n' + result31 + '```',
+			value='```' + result31 + '```',
 			inline = False
-			)				
+			)
+		embed.add_field(
+			name= result32,
+			value='```diff\n' + result33 + '```',
+			inline = False
+			)					
+		embed1 = discord.Embed(
+			title='',
+			description= '```-------------💚광기가(1기가)-------------```',
+			color=0x83ff30
+			)
+		embed1.add_field(
+			name="TV상품",
+			value='```💚TV(17↑)```',
+			inline = True
+			)
+		embed1.add_field(
+			name="모바일( 신규/MNP )",
+			value='```' + result1 + '```',
+			inline = True
+			)
+		embed1.add_field(
+			name="모바일(재가입/기변)",
+			value='```' + result2 + '```',
+			inline = True
+			)
 		embed1 = discord.Embed(
 			title='',
 			description= '```-------------💚광기가(1기가)-------------```',
@@ -416,7 +449,7 @@ async def on_message(message):
 			)
 		embed1.add_field(
 			name="TV상품",
-			value='```💚TV(P)/(B)\n(TV일반요금제제외)```',
+			value='```💚TV(프리미엄)```',
 			inline = True
 			)
 		embed1.add_field(
@@ -427,6 +460,21 @@ async def on_message(message):
 		embed1.add_field(
 			name="모바일(재가입/기변)",
 			value='```' + result4 + '```',
+			inline = True
+			)
+		embed1.add_field(
+			name="TV상품",
+			value='```💚TV(베이직)```',
+			inline = True
+			)
+		embed1.add_field(
+			name="모바일( 신규/MNP )",
+			value='```' + result5 + '```',
+			inline = True
+			)
+		embed1.add_field(
+			name="모바일(재가입/기변)",
+			value='```' + result6 + '```',
 			inline = True
 			)
 		embed2 = discord.Embed(
@@ -451,7 +499,7 @@ async def on_message(message):
 			)
 		embed2.add_field(
 			name="TV상품",
-			value='```💛TV(P)/(B)\n(TV일반요금제제외)```',
+			value='```💛TV(프리미엄)```',
 			inline = True
 			)
 		embed2.add_field(
@@ -462,6 +510,21 @@ async def on_message(message):
 		embed2.add_field(
 			name="모바일(재가입/기변)",
 			value='```' + result10 + '```',
+			inline = True
+			)
+		embed2.add_field(
+			name="TV상품",
+			value='```💛TV(베이직)```',
+			inline = True
+			)
+		embed2.add_field(
+			name="모바일( 신규/MNP )",
+			value='```' + result11 + '```',
+			inline = True
+			)
+		embed2.add_field(
+			name="모바일(재가입/기변)",
+			value='```' + result12 + '```',
 			inline = True
 			)
 		embed3 = discord.Embed(
@@ -486,7 +549,7 @@ async def on_message(message):
 			)
 		embed3.add_field(
 			name="TV상품",
-			value='```💙TV(P)/(B)\n(TV일반요금제제외)```',
+			value='```💙TV(프리미엄)```',
 			inline = True
 			)
 		embed3.add_field(
@@ -497,6 +560,21 @@ async def on_message(message):
 		embed3.add_field(
 			name="모바일(재가입/기변)",
 			value='```' + result16 + '```',
+			inline = True
+			)
+		embed3.add_field(
+			name="TV상품",
+			value='```💙TV(베이직)```',
+			inline = True
+			)
+		embed3.add_field(
+			name="모바일( 신규/MNP )",
+			value='```' + result17 + '```',
+			inline = True
+			)
+		embed3.add_field(
+			name="모바일(재가입/기변)",
+			value='```' + result18 + '```',
 			inline = True
 			)
 		await message.channel.send(embed=embed)
