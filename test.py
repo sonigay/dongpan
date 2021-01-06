@@ -191,17 +191,17 @@ async def on_message(message):
 				)
 			embed1.add_field(
 				name="TV상품",
-				value='```💚TV(프리미엄)```',
+				value='```💚TV(베이직)```',
 				inline = True
 				)
 			embed1.add_field(
 				name="모바일( 신규/MNP )",
-				value='```' + result3 + '```',
+				value='```' + result5 + '```',
 				inline = True
 				)
 			embed1.add_field(
 				name="모바일(재가입/기변)",
-				value='```' + result4 + '```',
+				value='```' + result6 + '```',
 				inline = True
 				)
 			embed2 = discord.Embed(
@@ -226,7 +226,7 @@ async def on_message(message):
 				)
 			embed2.add_field(
 				name="TV상품",
-				value='```💛TV(P)/(B)\n(TV일반요금제제외)```',
+				value='```💛TV(프리미엄)```',
 				inline = True
 				)
 			embed2.add_field(
@@ -237,6 +237,21 @@ async def on_message(message):
 			embed2.add_field(
 				name="모바일(재가입/기변)",
 				value='```' + result10 + '```',
+				inline = True
+				)
+			embed2.add_field(
+				name="TV상품",
+				value='```💛TV(베이직)```',
+				inline = True
+				)
+			embed2.add_field(
+				name="모바일( 신규/MNP )",
+				value='```' + result11 + '```',
+				inline = True
+				)
+			embed2.add_field(
+				name="모바일(재가입/기변)",
+				value='```' + result12 + '```',
 				inline = True
 				)
 			embed3 = discord.Embed(
@@ -261,7 +276,7 @@ async def on_message(message):
 				)
 			embed3.add_field(
 				name="TV상품",
-				value='```💙TV(P)/(B)\n(TV일반요금제제외)```',
+				value='```💙TV(프리미엄)```',
 				inline = True
 				)
 			embed3.add_field(
@@ -272,6 +287,21 @@ async def on_message(message):
 			embed3.add_field(
 				name="모바일(재가입/기변)",
 				value='```' + result16 + '```',
+				inline = True
+				)
+			embed3.add_field(
+				name="TV상품",
+				value='```💙TV(P)/(B)\n(TV일반요금제제외)```',
+				inline = True
+				)
+			embed3.add_field(
+				name="모바일( 신규/MNP )",
+				value='```' + result17 + '```',
+				inline = True
+				)
+			embed3.add_field(
+				name="모바일(재가입/기변)",
+				value='```' + result18 + '```',
 				inline = True
 				)
 
