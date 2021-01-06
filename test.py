@@ -291,7 +291,7 @@ async def on_message(message):
 				)
 			embed3.add_field(
 				name="TV상품",
-				value='```💙TV(P)/(B)\n(TV일반요금제제외)```',
+				value='```💙TV(베이직)```',
 				inline = True
 				)
 			embed3.add_field(
