@@ -30,10 +30,8 @@ doc2 = client2.open_by_url('https://docs.google.com/spreadsheets/d/15p6G4jXmHw7Z
 doc3 = client3.open_by_url('https://docs.google.com/spreadsheets/d/18-a0Upet-wmPWTcymSMfzNzQzrYd1u43SNeeYLfrcgM') #디메릿시트
 
 
-intents = discord.Intents.default()
-intents.members = True
 
-client = discord.Client(intents=intents)
+client = discord.Client()
 
 
 @client.event
