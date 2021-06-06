@@ -42,13 +42,21 @@ async def on_ready():
 	print("----------------")
 	await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name="업무지원", type=1), afk=False)
 
-	
-	
+
 	
 @client.event
 async def on_member_join(member):
-	await client.get_channel(661832869521391646).send(member.mention + '```님 환영합니다. \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```')
-	return	
+	sleep(1)
+	msg = '```<@{}>님 환영합니다. \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```'.format(str(member.id))
+	await client.get_channel(661832869521391646).send(msg)
+	return None
+
+	
+	
+#@client.event
+#async def on_member_join(member):
+#	await client.get_channel(661832869521391646).send(member.mention + '```님 환영합니다. \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```')
+#	return	
 	
 	
 #@client.event
