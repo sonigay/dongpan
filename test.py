@@ -73,12 +73,21 @@ async def on_ready():
 #    await message.member.send('```방갑습니다.```')
 #    await message.channel.send('```{1.name} 에 오신것을 환영합니다.\n{0.mention} 님!! \n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```')
 
+#@client.event
+#async def on_member_join(member):
+#	sleep(1)
+#	fmt = '```{1.name}에 오신걸 환영합니다! {0.mention}님!\n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```'.format(member, member.server)
+#	await client.get_channel(661832869521391646).send(fmt)
+
 @client.event
 async def on_member_join(member):
 	sleep(1)
-	fmt = '```{1.name}에 오신걸 환영합니다! {0.mention}님!\n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```'.format(member, member.server)
-	await client.get_channel(661832869521391646).send(fmt)
-
+	channel = client.get_channel(661832869521391646)
+	fmt = '```{1.name}에 오신걸 환영합니다! {0.mention}님!\n거래처권한요청채널에\n매장이름/직급/성함/연락처 이렇게 남겨주시면 \n확인후 권한을 승인해드리겠습니다.```'
+	await member.send(fmt)
+	await channel.send(fmt)
+	
+	
 #@client.event
 #async def on_member_join(member):
 #	sleep(1)
