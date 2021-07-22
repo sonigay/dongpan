@@ -96,12 +96,9 @@ async def on_ready():
 #	channel = member.server.get_channel(661832869521391646)
 #	await client.get_channel(channel).send(fmt)
 @client.event
-async def on_member_join(self, member: discord.Member):
-	channel = self.bot.get_channel(661832869521391646)
-	if not channel:
-		return
-	
-	await channel.send(f"Welcome, {member}!")
+async def on_member_join(member):
+
+	await on_member_join.send(f'member has joined the server.')
 
 
 
