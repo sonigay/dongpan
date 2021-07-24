@@ -43,11 +43,10 @@ async def on_ready():
 	await client.change_presence(status=discord.Status.dnd, activity=discord.Game(name="업무지원", type=1), afk=False)
 
 
-	
 
 
-#@client.event
-#async def on_message(message):
+@client.event
+async def on_message(message):
     
 # 동판채증 문구 안나오는 채널 제일정보통신 / 홍남옥 영업1  /KR1 / KR2 / KR3   
 #	if message.content.startswith('!동판'):
