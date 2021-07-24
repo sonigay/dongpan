@@ -695,50 +695,50 @@ async def on_ready():
 		await message.channel.send(embed=embed1)
 		
 		
-# 	if message.content == '!정책표':
-# 		command_list = ''
-# 		command_list += '\n'
-# 		command_list += '📌 공지사항\n'
-# 		command_list += '```css\n⭕2020-02-18기준 부터\n⭕방x위 지시사항으로 정책표상에 [시간기재가 금지]됩니다.\n⭕정책적용기준은 정책표 제목시간 확인바랍니다.\n⭕폰클단가표 보는법은\n⭕정책표 왼편상단 보안코드란에 [매장P코드] 넣어주시고\n⭕[P는 대문자]이어야 하고 뒤에 [0세개는 빼주세요.]\n⭕그레이드확인은 [!그레이드] 로 확인 가능하십니다..\n⭕장기고객 기변프로모션은 [!비하인드] 로 확인 가능하십니다..\n⭕가족결합정책 종료!! ```'
-# 		command_list += '\n'
-# 		command_list += '폰클사이트 링크\n'
-# 		command_list += 'https://shop.poncle.co.kr/?action=login&url=Lw== \n'     #!링크
-# 		command_list += '\n'
-# 		command_list += ''
-# 		command_list += ''
-# 		command_list += ''     #!링크
-# 		gc1 = gspread.authorize(creds1)
-# 		wks = gc1.open('정책표관리').worksheet('무선구두')
-# 		result = wks.acell('E3').value
-# 		embed1 = discord.Embed(
-# 			title = '정책표 안내',
-# 			description= command_list,
-# 			color=0xf29886
-# 			)
-# 		embed2 = discord.Embed(
-# 			title = '폰클링크안내!',
-# 			description= '```\n출력자:' + message.author.display_name +'\n거래처:' + message.channel.name + '```',
-# 			color=0xf29886
-# 			)
-# 		await client.get_channel(672022974223876096).send(embed=embed2)
-# 		await message.channel.send(embed=embed1)
+	if message.content == '!정책표':
+		command_list = ''
+		command_list += '\n'
+		command_list += '📌 공지사항\n'
+		command_list += '```css\n⭕2020-02-18기준 부터\n⭕방x위 지시사항으로 정책표상에 [시간기재가 금지]됩니다.\n⭕정책적용기준은 정책표 제목시간 확인바랍니다.\n⭕폰클단가표 보는법은\n⭕정책표 왼편상단 보안코드란에 [매장P코드] 넣어주시고\n⭕[P는 대문자]이어야 하고 뒤에 [0세개는 빼주세요.]\n⭕그레이드확인은 [!그레이드] 로 확인 가능하십니다..\n⭕장기고객 기변프로모션은 [!비하인드] 로 확인 가능하십니다..\n⭕가족결합정책 종료!! ```'
+		command_list += '\n'
+		command_list += '폰클사이트 링크\n'
+		command_list += 'https://shop.poncle.co.kr/?action=login&url=Lw== \n'     #!링크
+		command_list += '\n'
+		command_list += ''
+		command_list += ''
+		command_list += ''     #!링크
+		gc1 = gspread.authorize(creds1)
+		wks = gc1.open('정책표관리').worksheet('무선구두')
+		result = wks.acell('E3').value
+		embed1 = discord.Embed(
+			title = '정책표 안내',
+			description= command_list,
+			color=0xf29886
+			)
+		embed2 = discord.Embed(
+			title = '폰클링크안내!',
+			description= '```\n출력자:' + message.author.display_name +'\n거래처:' + message.channel.name + '```',
+			color=0xf29886
+			)
+		await client.get_channel(672022974223876096).send(embed=embed2)
+		await message.channel.send(embed=embed1)
 		
-#	if message.content.startswith('!그레이드'):
-#		gc2 = gspread.authorize(creds2)
-#		wks = gc2.open('재고관리').worksheet('그레이드')
-#		result = wks.acell('B1').value
-#		embed1 = discord.Embed(
-#			title = ' 파트너 그레이드 안내!! ',
-#			description= '**```css\n' + result + ' ```**',
-#			color=0x7fffd4
-#			)
-#		embed2 = discord.Embed(
-#			title = ' 파트너 그레이드 조회!! ',
-#			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
-#			color=0x00ffff
-#			)
-#		await client.send_message(message.channel, embed=embed1)
-#		await client.send_message(client.get_channel("674827771817623572"), embed=embed2)
+	if message.content.startswith('!그레이드'):
+		gc2 = gspread.authorize(creds2)
+		wks = gc2.open('재고관리').worksheet('그레이드')
+		result = wks.acell('B1').value
+		embed1 = discord.Embed(
+			title = ' 파트너 그레이드 안내!! ',
+			description= '**```css\n' + result + ' ```**',
+			color=0x7fffd4
+			)
+		embed2 = discord.Embed(
+			title = ' 파트너 그레이드 조회!! ',
+			description= '```' "조회자:" + message.author.display_name +"\n거래처:" + message.channel.name + ' ```',
+			color=0x00ffff
+			)
+		await client.send_message(message.channel, embed=embed1)
+		await client.send_message(client.get_channel("674827771817623572"), embed=embed2)
 		
 	if message.content.startswith('!주문'):
 		curruntTime = datetime.datetime.now() + datetime.timedelta(hours = 9)
